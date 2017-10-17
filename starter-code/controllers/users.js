@@ -40,6 +40,8 @@ function postLogin(request, response, next) {
 
 // GET /logout
 function getLogout(request, response) {
+	request.logout();
+	response.redirect('/');
 }
 
 // Restricted page
