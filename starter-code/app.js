@@ -21,10 +21,15 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 app.use(session({ secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS' })); 
+//inialize passport
 app.use(passport.initialize());
+//sessions
 app.use(passport.session()); 
+//flash messgaes
 app.use(flash()); 
 
+//keep above routes
+//require file config passport and pass in passport package
 require('./config/passport')(passport);
 
 var routes = require('./config/routes');
